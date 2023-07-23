@@ -23,7 +23,8 @@ const CartItem = ({ id, img, title, price, amount }) => {
         {/* amount */}
         <p className='amount'>{amount}</p>
         {/* decrease amount */}
-        <button className='amount-btn' onClick={() => dispatch(decrease({id}))}>
+        <button className='amount-btn' onClick={() =>  amount === 1 ? dispatch(removeItem(id)) : dispatch(decrease({id}))}
+          >
           <ChevronDown />
         </button>
       </div>
